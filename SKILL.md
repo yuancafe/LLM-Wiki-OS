@@ -9,7 +9,7 @@ description: |
   and the new "Observer" module for autonomous tracking.
 ---
 
-# LLM Wiki OS v1.2.0: 观察者与自适应系统
+# LLM Wiki OS: 自进化的知识引擎与操作系统 (v1.2.0-observer)
 
 ## 1. 核心进化：从“被动整理”到“主动观察”
 

@@ -1,4 +1,4 @@
-# LLM Wiki OS v1.2.0: The Observer Edition
+# LLM Wiki OS: The Self-Evolving Knowledge Engine & OS (v1.2.0 Observer Edition)
 
 [English] | [简体中文](./README_zh.md)
 
@@ -6,7 +6,7 @@
 
 基于 [Andrej Karpathy](https://karpathy.ai/), [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) & [Rowboat](https://github.com/rowboatlabs/rowboat) 的进化版方法论
 
-**The First Self-Evolving Knowledge OS with "Live Observation" Logic**
+**The Next-Gen Knowledge Orchestration System that Grows with You**
 
 [![version](https://img.shields.io/badge/v1.2.0-Observer--Edition-green?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
