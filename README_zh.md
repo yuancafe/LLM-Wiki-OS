@@ -1,39 +1,57 @@
-# LLM Wiki OS v1.1.0: 自进化的知识引擎与操作系统
+# LLM Wiki OS v1.2.0: 观察者版 (The Observer Edition)
 
 [简体中文] | [English](./README.md)
 
 <div align="center">
 
-基于 [Andrej Karpathy](https://karpathy.ai/) & [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) 的进化版方法论
+基于 [Andrej Karpathy](https://karpathy.ai/), [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) & [Rowboat](https://github.com/rowboatlabs/rowboat) 的进化版方法论
 
-**全球首个具备“自我生长”与“多源调度”能力的知识操作系统**
+**全球首个具备“主动观察”与“行为配置”能力的知识操作系统**
 
-[![version](https://img.shields.io/badge/v1.1.0-Hardcore--Edition-red?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
+[![version](https://img.shields.io/badge/v1.2.0-Observer--Edition-green?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
 
 </div>
 
 ---
 
-## 🚀 v1.1.0 有什么新东西？
+## 🚀 v1.2.0 有什么新东西？
 
-我们集成了社区中最顶尖的实现模式，让项目超越了简单的存储。**LLM Wiki OS 现在是一个“知识编译器”。**
+我们已经从“被动消化”进化到了**“主动观察”**。LLM Wiki OS 现在是您的自主研究哨兵。
 
-### 🧠 1. “反映式结晶”流水线 (Reflect & Grow)
-不再是盲目的文字堆砌。每次消化素材都包含一个**反思阶段 (Reflect Phase)**：
-- **冲突检测**：这篇新论文是否与我现有的 Wiki 结论矛盾？
-- **冗余过滤**：这个概念是否已经在其他地方被更好地解释了？
-- **增量合并**：直接更新现有知识，而不是创建重复文件。
+### 🔭 1. “观察者”模块 (Observer Module)
+引入 **`@Observe`** 指令。您现在可以命令 Agent “盯住”特定的实体或主题：
+- **自主监听**：定期轮询 OpenCLI 数据源（X, Reddit, arXiv）。
+- **静默更新**：操作系统会自动将新发现结晶到您的 Wiki 中，无需手动干预。
+- **演进追踪**：在 `log.md` 中记录知识随时间产生的“漂移与演进”。
 
-### ⚡ 2. SQLite 语义索引
-引入 **`wiki.db`**。我们使用本地 SQLite 索引来追踪整个库的状态。
-- **极速扫描**：在毫秒内扫描 10,000+ 笔记，为自生长引擎提供动力。
-- **数据完整性**：确保没有断链或孤立实体。
+### 📄 2. Frontmatter 驱动行为 (文件即配置)
+不再有隐藏设置。直接在您的笔记头部配置 AI 的行为：
+```yaml
+---
+status: observing
+observe_interval: 7d
+unsolved_mysteries: ["该理论如何应用到最新的市场数据中？"]
+---
+```
+只需编辑 Markdown 文件，即可改变 AI 研究该主题的方式。
 
-### 🔍 3. 人机协作审计 (Audit Block)
-每个 AI 生成的条目现在都包含原生的**审计块**：
-- **置信度评分**：基于来源可靠性的 0-100% 评分。
-- **核实逻辑**：标记条目为“人工已核实”，防止 AI 幻觉漂移。
+### 🧠 3. 可触感记忆与“谜团”日志 (Mystery Logs)
+您的 **`log.md`** 不再仅仅是任务清单：
+- **谜团追踪**：AI 会记录在消化过程中发现但无法立即解释的“未解之谜”——为未来的研究自动创建待办。
+- **审计追踪**：每个条目包含可验证的“AI 审计块”，带位置信评分和人工确认位。
+
+---
+
+## 🛠️ 操作系统架构
+
+### **3 层调度溯源**
+- **第一层**：本地物理原始文件 (Physical Raw)。
+- **第二层**：结构化中继记忆 (NotebookLM, iMA, 飞书, Slack/Discord)。
+- **第三层**：全球实时抓取 (OpenCLI 140+ 网站)。
+
+### **🌱 持续生长**
+`sync_growth()` 现在不仅能建议主题，还能管理所有处于“观察态”的笔记，确保您的知识库随着全球信号有机生长。
 
 ---
 

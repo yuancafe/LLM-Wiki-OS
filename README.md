@@ -1,39 +1,57 @@
-# LLM Wiki OS v1.1.0: The Self-Evolving Knowledge Engine & OS
+# LLM Wiki OS v1.2.0: The Observer Edition
 
 [English] | [简体中文](./README_zh.md)
 
 <div align="center">
 
-An evolved methodology inspired by [Andrej Karpathy](https://karpathy.ai/) & [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki)
+基于 [Andrej Karpathy](https://karpathy.ai/), [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) & [Rowboat](https://github.com/rowboatlabs/rowboat) 的进化版方法论
 
-**The Next-Gen Knowledge Orchestration System that Grows with You**
+**The First Self-Evolving Knowledge OS with "Live Observation" Logic**
 
-[![version](https://img.shields.io/badge/v1.1.0-Hardcore--Edition-red?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
+[![version](https://img.shields.io/badge/v1.2.0-Observer--Edition-green?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
 
 </div>
 
 ---
 
-## 🚀 What's New in v1.1.0?
+## 🚀 What's New in v1.2.0?
 
-We've integrated high-octane patterns from the community's best implementations to move beyond simple storage. **LLM Wiki OS is now a Knowledge Compiler.**
+We've moved from "Passive Ingestion" to **"Active Observation."** LLM Wiki OS is now your autonomous research scout.
 
-### 🧠 1. "Reflect & Grow" Pipeline
-No more blind text dumping. Every ingestion now includes a **Reflect Phase**:
-- **Conflict Detection**: Does this new paper contradict my existing wiki?
-- **Redundancy Filtering**: Is this concept already explained better elsewhere?
-- **Incremental Merging**: Updating existing knowledge instead of creating duplicate files.
+### 🔭 1. The "Observer" Module
+Introducing the **`@Observe`** directive. You can now command your Agent to "keep an eye" on specific entities or topics.
+- **Autonomous Monitoring**: Periodic polling of OpenCLI sources (X, Reddit, arXiv).
+- **Silent Updates**: The OS automatically crystallizes new findings into your wiki.
+- **Drift Detection**: Tracks how concepts evolve over time in your `log.md`.
 
-### ⚡ 2. SQLite Semantic Indexing
-Introducing **`wiki.db`**. We use a local SQLite index to track your entire vault's state. 
-- **Lightning Speed**: Scans 10,000+ notes in milliseconds for the Growth Engine.
-- **Data Integrity**: Ensures no broken links or orphaned entities.
+### 📄 2. Frontmatter-Driven Behavior (File-as-Config)
+No more hidden settings. Configure your AI's behavior directly inside your notes:
+```yaml
+---
+status: observing
+observe_interval: 7d
+unsolved_mysteries: ["How does this theory apply to the new market data?"]
+---
+```
+Simply edit the Markdown file to change how the AI researches that specific topic.
 
-### 🔍 3. Human-in-the-loop Auditing
-Every AI-generated entry now includes a native **Audit Block**:
-- **Confidence Scoring**: 0-100% based on source reliability.
-- **Verification Logic**: Mark entries as "Human Verified" to prevent AI hallucination drift.
+### 🧠 3. Tangible Memory & Mystery Logs
+Your **`log.md`** is no longer a boring list of "done" tasks.
+- **Mystery Tracking**: AI records "unsolved mysteries" found during ingestion—creating a backlog for future research.
+- **Audit Trails**: Every entry includes a verifiable "AI Audit Block" with confidence scores and human-in-the-loop verification.
+
+---
+
+## 🛠️ The OS Architecture
+
+### **3-Tier Sourcing**
+- **Tier 1**: Local Raw (Your private library).
+- **Tier 2**: Structured Memory (NotebookLM, iMA, Feishu, Slack/Discord).
+- **Tier 3**: Global Hunt (OpenCLI 140+ sites).
+
+### **🌱 Continuous Growth**
+`sync_growth()` now not only suggests topics but also manages all "Observing" notes, ensuring your wiki grows organically with the latest global signals.
 
 ---
 

@@ -4,7 +4,20 @@
 
 All notable changes to this project will be documented in this file. This project follows the evolution from a simple CLI skill to a comprehensive Knowledge OS.
 
+## [1.2.0] - 2026-05-09 (The Observer Edition)
+
+### Added
+- **Observer Module**: Introduced the `@Observe` command for autonomous monitoring of topics and entities.
+- **Frontmatter-Driven Behavior**: AI now reads YAML configuration directly from Markdown files to control tracking and synchronization logic.
+- **Mystery Logs**: Enhanced `log.md` to track "unsolved mysteries" identified during ingestion as high-priority research leads.
+- **Live Sync Protocol**: Initial logic for automatic wiki updates based on external signals (inspired by Rowboat).
+
+### Changed
+- Refined the "Reflect" phase to incorporate observer-state detection.
+- Upgraded documentation to highlight active observation capabilities.
+
 ## [1.1.0] - 2026-05-09 (The Hardcore Edition)
+...
 
 ### Added
 - **"Reflect & Grow" Logic**: Integrated Astro-Han's reflection pattern. AI now detects conflicts and redundancies before crystallization.
