@@ -4,7 +4,7 @@
 
 <div align="center">
 
-基于 [Andrej Karpathy](https://karpathy.ai/), [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) & [Rowboat](https://github.com/rowboatlabs/rowboat) 的进化版方法论
+An evolved methodology inspired by [Andrej Karpathy](https://karpathy.ai/), [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) & [Rowboat](https://github.com/rowboatlabs/rowboat)
 
 **The Next-Gen Knowledge Orchestration System that Grows with You**
 
