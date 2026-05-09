@@ -1,23 +1,32 @@
 ---
-name: omni-wiki-agent
+name: llm-wiki-os
 version: 1.0.0
 ---
 
-# OmniWiki Agent: Your Intelligent Knowledge Symbiont
+# LLM Wiki OS: Your Knowledge Operating System
 
-> Turning AI into the gardener of your Obsidian knowledge base. More than just organizing—it's co-evolving.
+> A 3-tier orchestration & self-growth knowledge system for AI Agents, based on Karpathy's LLM-Wiki methodology.
 
 ## 1. Core Architecture: 3-Tier Sourcing
 
-OmniWiki Agent utilizes an industry-leading 3-tier orchestration architecture, ensuring your knowledge base possesses depth, breadth, and personal insight:
+LLM Wiki OS utilizes a modular architecture to bridge the gap between fragmented information and systematic knowledge:
 
-- **Tier 1: Physical Raw Layer**: Directly digests PDFs, Markdown, or text files stored in the local `raw/` directory.
-- **Tier 2: Structured Upstream Layer**: Deeply integrates with **NotebookLM** (large resource collections), **iMA Knowledge Base** (personal fragmentary thoughts), and **Feishu/Lark Docs** (team collaboration records). The AI extracts information across platforms and performs high-quality conversions via conversation crystallization.
-- **Tier 3: Raw Capture Layer**: Based on the powerful **OpenCLI** (supporting 140+ sites) and **Chrome Dev MCP**, capturing the freshest materials from around the globe in real-time.
+- **Tier 1: Physical Raw Layer**: Directly digests local files in the `raw/` directory.
+- **Tier 2: Enterprise Connectors (Structured Connectors)**: ✨ **Major Upgrade**.
+    - **Collaboration**: Feishu/Lark, WeCom (WeChat Work), DingTalk.
+    - **Knowledge Engines**: NotebookLM, iMA, Google Docs.
+    - **Community Memory**: Slack and Discord conversation crystallization.
+- **Tier 3: Raw Capture Layer**: Real-time capturing via **OpenCLI** (140+ sites) and **Chrome Dev MCP**.
 
-## 2. Exclusive Features
+## 2. Connector Ecosystem
 
-- **🌱 Growth Engine**: With the `sync_growth` command, the AI proactively scans your Obsidian vault to identify emerging areas of focus and dynamically suggests creating new Topics or evolving research directions (`purpose.md`).
+Designed for universal accessibility, LLM Wiki OS leverages MCP (Model Context Protocol) to dynamically interact with:
+- `lark-unified` / `wecom-cli`: Synchronize enterprise documentation.
+- `slack` / `discord`: Distill scattered channel discussions into structured Wiki entries.
+- `google-docs`: Seamlessly connect with cloud-based documents.
+
+## 3. 🌱 Growth Engine
+...
 - **🔄 Dynamic Adapter Protocol**: Synchronizes with OpenCLI to support the latest social media and academic platform scraping without manual code updates.
 - **🏛️ Hierarchical Management**: Supports a multi-wiki model under a single root directory, perfectly balancing cross-disciplinary linking with the purity of individual fields.
 
@@ -26,7 +35,7 @@ OmniWiki Agent utilizes an industry-leading 3-tier orchestration architecture, e
 ### Installation
 ```bash
 # Recommended installation via skill-manager or direct clone to your skills directory
-git clone https://github.com/<Your-Username>/omni-wiki-agent.git ~/.agents/skills/omni-wiki-agent
+git clone https://github.com/<Your-Username>/llm-wiki-os.git ~/.agents/skills/llm-wiki-os
 ```
 
 ### Initialization

@@ -12,5 +12,14 @@ weibo_post	微博	optional_adapter	url	url_host:weibo.com,weibo.cn	raw/weibo	ope
 xueqiu_post	雪球	optional_adapter	url	url_host:xueqiu.com	raw/finance	opencli:xueqiu	opencli	install_time	自动提取失败时，改为复制全文粘贴
 jike_post	即刻	optional_adapter	url	url_host:okjike.com	raw/notes	opencli:jike	opencli	install_time	自动提取失败时，改为复制全文粘贴
 v2ex_post	V2EX	optional_adapter	url	url_host:v2ex.com	raw/notes	opencli:v2ex	opencli	install_time	自动提取失败时，改为复制全文粘贴
+# Tier 2: Structured Connectors (Enterprise & Professional)
+notebooklm_source	NotebookLM	optional_adapter	manual	source:notebooklm	raw/synthesis	mcp:notebooklm	notebooklm	mcp_native	从 NotebookLM 提取结构化知识
+ima_source	iMA 知识库	optional_adapter	manual	source:ima	raw/notes	mcp:ima-skills	ima-skills	mcp_native	从 iMA 检索碎片化笔记
+feishu_doc	飞书文档	optional_adapter	url	url_host:feishu.cn,larksuite.com	raw/wechat	mcp:lark-unified	lark-unified	mcp_native	同步飞书文档/多维表格内容
+wecom_doc	企业微信文档	optional_adapter	url	url_host:work.weixin.qq.com	raw/wechat	mcp:wecom-cli	wecom-cli	mcp_native	提取企业微信协作文档
+dingtalk_doc	钉钉文档	optional_adapter	url	url_host:dingtalk.com	raw/notes	mcp:dingtalk-cli	dingtalk-cli	mcp_native	提取钉钉文档内容
+google_doc	Google Docs	optional_adapter	url	url_host:docs.google.com	raw/articles	mcp:google-docs	google-docs	mcp_native	从 Google Docs 导入
+slack_convo	Slack 讨论	optional_adapter	manual	source:slack	raw/notes	mcp:slack	slack	mcp_native	结晶 Slack 频道讨论
+discord_convo	Discord 讨论	optional_adapter	manual	source:discord	raw/notes	mcp:discord	discord	mcp_native	结晶 Discord 讨论
 other_link	其他链接	manual_only	url	url_host:manual.local	raw/notes	-	-	none	手动复制内容并粘贴
 web_article	网页文章	optional_adapter	url	url_host:*	raw/articles	baoyu-url-to-markdown	baoyu-url-to-markdown	bundled	自动提取失败时，改为复制全文或保存为本地文件后继续

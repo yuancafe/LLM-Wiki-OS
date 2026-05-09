@@ -14,6 +14,6 @@ All notable changes to this project will be documented in this file.
 - **Leo's High-Density Style**: Default logic optimized for "Fact Lists" and "Structural Thinking" as per the founder's portfolio.
 
 ### Changed
-- Rebranded from `llm-wiki-skill` to **OmniWiki Agent**.
+- Rebranded from `llm-wiki-skill` to **LLM Wiki OS**.
 - Migrated default installation path to `~/.agents/skills/`.
 - Generalized configuration logic to be user-agnostic.
