@@ -1,71 +1,76 @@
 ---
 name: llm-wiki
-version: 4.5.0-orchestrator
-author: sdyckjq-lab & Gemini-CLI
+version: 1.1.0-hardcore
+author: sdyckjq-lab, Astro-Han & Gemini-CLI
 license: MIT
 description: |
-  个人知识全全量调度与生长系统。采用 3 层溯源架构，整合本地 raw 目录、NotebookLM、iMA 知识库、飞书文档及 140+ Web 平台。
-  具备“多源感应”与“自生长”能力。
+  Knowledge OS for AI Agents. Features 3-Tier Sourcing, SQLite Indexing, 
+  and autonomous "Reflect & Grow" logic.
 ---
 
-# llm-wiki 技能：三层知识调度引擎
+# LLM Wiki OS v1.1.0: 知识编译器与调度中心
 
-本技能不再仅仅是文件的搬运工，而是您**多维知识宇宙的中心调度器**。它将碎片化的“狩猎内容”通过“记忆中继”最终转化为“数字孪生大脑”。
+## 1. 核心模型：反映式增长 (Reflect & Grow)
 
-## 1. 核心架构：三层溯源 (3-Tier Sourcing)
+本系统不仅是存储，更是对知识的**持续编译 (Continuous Compilation)**。
 
-在为您整理每一个 Topic 的 Wiki 时，我将按以下优先级进行调度：
+### **3 层调度架构 (3-Tier Sourcing)**
+- **Tier 1 (Raw)**: 本地物理层 (PDF/MD/TXT)。
+- **Tier 2 (Relay)**: 结构化中继 (NotebookLM/iMA/Feishu/Slack)。
+- **Tier 3 (Hunt)**: 全球 Web 采集 (OpenCLI/Chrome Dev MCP)。
 
-### **Tier 1: 物理原生层 (Physical Raw)**
-- **位置**：`<Root>/<Topic>/raw/`
-- **逻辑**：优先处理已下载的 PDF、Markdown 笔记和本地文件。
-- **状态**：这是知识库的“地基”。
-
-### **Tier 2: 记忆中继层 (Structured Upstream)**
-- **来源**：
-    - **NotebookLM**：通过 `notebook_query` 调度大型研究合集。
-    - **iMA 知识库**：通过 `ima_search_notes` 提取个人碎片化思考。
-    - **飞书文档 (Feishu)**：通过 `feishu_doc_read` 获取团队协作和 PRD 产物。
-- **逻辑**：当我发现本地 raw 不足以支撑词条时，我会主动提示：“我在您的 NotebookLM '留学研究' 中发现了 50 个相关资源，是否需要以此为基准进行结晶？”
-
-### **Tier 3: 狩猎采集层 (Raw Capture)**
-- **来源**：OpenCLI (140+ 站)、Bilibili、XHS、Chrome Dev MCP 快照。
-- **逻辑**：去外部世界寻找最新鲜的素材并将其沉淀入 raw 目录。
+### **反映式结晶流程 (Reflect Step)**
+在 `ingest` 或 `synthesis` 时，Agent 必须执行以下思维循环：
+1.  **Extract**: 提取新素材事实。
+2.  **Reflect**: 将新事实与现有 Wiki 词条对比。
+    - *检测冲突*：新信息是否推翻了旧结论？
+    - *检测冗余*：该知识点是否已在其他词条中描述？
+3.  **Crystallize**: 合并、更新并建立 `[[双向链接]]`。
 
 ---
 
-## 2. 目录结构与映射
+## 2. 独家硬核特性
 
-根目录：`~/.../YuanBrain/LLM-Wiki`
+### **🌱 自生长引擎 (sync_growth)**
+AI 实时感知 Obsidian 库变动，动态建议新 Topic。支持毫秒级 **SQLite (wiki.db)** 全库扫描。
 
-| 主题 (Topic) | 关联 Notebook (LM) | 关联飞书目录/文档 | 关联 iMA 标签 |
-| :--- | :--- | :--- | :--- |
-| **Agent-OS** | `Agent-Architecture-ID` | `Feishu-Agent-Wiki-Node` | `#AI-Agent` |
-| **Career-Education** | `Study-Abroad-Deep-Dive` | `CareerTime-PRD` | `#Career` |
-| **Complex-Systems** | `Science-Philosophy` | - | `#Complexity` |
-| ... | ... | ... | ... |
+### **🔍 审计模块 (Audit Block)**
+每个生成的词条尾部必须包含审计块，支持人机协作：
+```markdown
+> [!IMPORTANT] AI 审计日志
+> - **置信度**: 95% (Tier 1 支撑)
+> - **冲突检测**: 未发现逻辑矛盾
+> - **状态**: [ ] 已人工核实
+```
+
+### **⚡ 极简指令集 (Minimalist Prompts)**
+指令遵循 Karpathy 审美，去除冗余描述，极大节省 Context Tokens。
 
 ---
 
 ## 3. 核心指令
 
 ### `ingest(source, topic?)`
-- **增强逻辑**：如果 source 是一个关键词而非 URL，Agent 会询问：“是否从 Tier 2 (NotebookLM/iMA) 搜索相关内容并存入 raw？”
-
-### `synthesis(topic)`
-- **深度合成**：不仅汇总 `raw/` 文件夹，还会调用 `NotebookLM` 进行跨文件摘要，结合您的 `iMA` 思考，最终输出具备“Leo 风格事实清单”的百科词条。
+消化素材并进入 **Reflect** 流程。
+- `source`: URL/Path/Keyword.
+- `topic`: 自动推导或手动指定。
 
 ### `sync_growth()`
-- **全局演进**：扫描 Obsidian 库 + Tier 2 的新动向，建议新的 Topic 或更新 `purpose.md`。
+基于 `wiki.db` 索引扫描 30 天动态，重构 `purpose.md` 并建议新主题。
+
+### `reindex()`
+运行 `scripts/reindex-db.py`，手动刷新 SQLite 语义索引。
 
 ---
 
 ## 4. 给 Agent 的指令 (工作流准则)
 
-1.  **主动询问**：如果本地 raw 为空，**必须**检查是否有可用的 Tier 2 接口。如果没有安装对应 skill，告知用户：“我可以从 NotebookLM 获取更深的信息，您需要我安装相关组件吗？”
-2.  **跨源校验**：在整理词条时，如果 NotebookLM 的信息与 iMA 中的个人思考冲突，以 iMA 为准（尊重 Leo 的个人判断），并在 Wiki 中标注“存在观点演进”。
-3.  **结构化输出**：所有从 Tier 2/3 获取的内容，入库前必须转化为符合 Leo 画像要求的“高密度事实清单”。
+1.  **Reflect First**: 永远先反思旧知识，再写入新知识。
+2.  **Tiered Priority**: Tier 1 > Tier 2 > Tier 3。
+3.  **High Density**: 拒绝废话，只输出“高密度事实清单”。
+4.  **Audit Integrity**: 每个词条必须带 Audit Block。
+5.  **Auto-Link**: 结晶时必须尝试与库中至少 2 个现有词条建立链接。
 
-## 5. 抓取与同步协议
-- `refresh-opencli`：保持 Tier 3 战斗力。
-- `notebooklm-auth`：确保 Tier 2 畅通。
+## 5. 维护协议
+- `refresh-opencli`: 同步 140+ 抓取适配器。
+- `python3 scripts/reindex-db.py`: 维护查询性能。

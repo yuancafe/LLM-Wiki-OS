@@ -1,57 +1,72 @@
-# LLM Wiki OS: The Intelligent Knowledge Operating System
+# LLM Wiki OS v1.1.0: The Hardcore Knowledge Engine
 
 [English] | [简体中文](./README_zh.md)
 
 <div align="center">
 
-基于 [Andrej Karpathy](https://karpathy.ai/) 的 [llm-wiki 方法论](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+基于 [Andrej Karpathy](https://karpathy.ai/) & [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) 的进化版方法论
 
-**From "Folders" to a "Living Brain" — The Next-Gen Knowledge Orchestration System**
+**The First Knowledge OS with "Reflect & Grow" Logic**
 
-[![version](https://img.shields.io/badge/v1.0.0-OS--Grade-blue?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
+[![version](https://img.shields.io/badge/v1.1.0-Hardcore--Edition-red?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/yuancafe/LLM-Wiki-OS?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/stargazers)
 
 </div>
 
 ---
 
-## 🌟 Overview: Why LLM Wiki OS?
+## 🚀 What's New in v1.1.0?
 
-Standard "LLM Wikis" are static. They are just folders where AI dumps text. **LLM Wiki OS** is an autonomous orchestrator that turns your AI Agent into a **Digital Gardener**. It doesn't just store information; it **sources, links, and evolves** alongside your intellectual growth.
+We've integrated high-octane patterns from the community's best implementations to move beyond simple storage. **LLM Wiki OS is now a Knowledge Compiler.**
 
-### 🏆 Key Evolutionary Leaps
-- **3-Tier Sourcing Architecture**: Prioritized retrieval from local files, structured memory (NotebookLM/iMA/Feishu), and the global web.
-- **🌱 Self-Growth Engine**: The first wiki that "suggests" what you should learn next and creates its own structure.
-- **Enterprise-Ready Connectors**: Seamlessly integrates with WeCom, DingTalk, Google Docs, Slack, and Discord.
+### 🧠 1. "Reflect & Grow" Pipeline
+No more blind text dumping. Every ingestion now includes a **Reflect Phase**:
+- **Conflict Detection**: Does this new paper contradict my existing wiki?
+- **Redundancy Filtering**: Is this concept already explained better elsewhere?
+- **Incremental Merging**: Updating existing knowledge instead of creating duplicate files.
 
----
+### ⚡ 2. SQLite Semantic Indexing
+Introducing **`wiki.db`**. We use a local SQLite index to track your entire vault's state. 
+- **Lightning Speed**: Scans 10,000+ notes in milliseconds for the Growth Engine.
+- **Data Integrity**: Ensures no broken links or orphaned entities.
 
-## 🛠️ The Core Architecture: 3-Tier Sourcing
-
-LLM Wiki OS utilizes a prioritized 3-layer model to build high-density knowledge entries:
-
-### **Tier 1: Physical Raw Layer (Ground Truth)**
-Direct ingestion of local PDFs, Markdown files, and manual notes. This is the foundation of your private intelligence.
-
-### **Tier 2: Structured Connectors (Memory Relays) ✨ NEW**
-The major breakthrough. LLM Wiki OS can "reach into" other AI and collaboration systems:
-*   **NotebookLM**: Query massive research collections (~50+ files) via AI-to-AI dialogue.
-*   **iMA Knowledge Base**: Retrieve your personal "shards of thought" and fragments.
-*   **Feishu / WeCom / DingTalk**: Sync team docs and project PRDs directly into your wiki.
-
-### **Tier 3: Raw Capture Layer (The Hunt)**
-Powered by **OpenCLI** (supporting 140+ sites) and **Chrome Dev MCP**. If it's on the web (X, Reddit, arXiv, Bilibili), LLM Wiki OS will find it, render it, and crystallize it.
+### 🔍 3. Human-in-the-loop Auditing
+Every AI-generated entry now includes a native **Audit Block**:
+- **Confidence Scoring**: 0-100% based on source reliability.
+- **Verification Logic**: Mark entries as "Human Verified" to prevent AI hallucination drift.
 
 ---
 
-## 🌱 Exclusive Feature: Self-Growth Engine
+## 🛠️ The Hardcore Architecture
 
-Traditional wikis require manual organization. LLM Wiki OS introduces **`sync_growth()`**:
+### **3-Tier Sourcing**
+- **Tier 1**: Local Raw (Private Truth).
+- **Tier 2**: Structured Relays (NotebookLM, iMA, Feishu, Slack, Discord).
+- **Tier 3**: Live Capture (OpenCLI 140+ sites).
 
-1.  **Trend Discovery**: Scans your Obsidian vault to identify "Emerging Interest Clusters" in your recent writing.
-2.  **Dynamic Topic Proposal**: Suggests creating new Wiki Topics (e.g., "Digital Humanities" or "Complex Systems") based on actual activity.
-3.  **Purpose Evolution**: Automatically updates your `purpose.md` files to keep the AI's research focus aligned with your current intellectual trajectory.
+### **🌱 Autonomous Growth**
+Run `sync_growth()` to let the OS analyze your intellectual trajectory and suggest the next frontier of your knowledge base.
+
+---
+
+## 🚀 Installation
+
+```bash
+# 1. Clone & Setup
+git clone https://github.com/yuancafe/LLM-Wiki-OS.git ~/.agents/skills/llm-wiki-os
+
+# 2. Re-index your existing vault
+python3 scripts/reindex-db.py "~/Documents/MyVault/LLM-Wiki"
+```
+
+---
+
+## 📜 Credits & Respect
+
+This version is heavily inspired by:
+- **[Andrej Karpathy](https://karpathy.ai/)**: The OG methodology.
+- **[Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki)**: For the "Reflect" logic and SQLite indexing patterns.
+- **[sdyckjq-lab](https://github.com/sdyckjq-lab/llm-wiki-skill)**: For the foundation of the Agent skill.
 
 ---
 

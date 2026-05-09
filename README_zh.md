@@ -1,29 +1,72 @@
-# LLM Wiki OS: 您的智能知识操作系统
+# LLM Wiki OS v1.1.0: 硬核知识引擎
 
 [简体中文] | [English](./README.md)
 
 <div align="center">
 
-基于 [Andrej Karpathy](https://karpathy.ai/) 的 [llm-wiki 方法论](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+基于 [Andrej Karpathy](https://karpathy.ai/) & [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) 的进化版方法论
 
-**从“文件夹”进化为“数字孪生大脑” —— 下一代知识调度与生长系统**
+**全球首个具备“反映式增长”逻辑的知识操作系统**
 
-[![version](https://img.shields.io/badge/v1.0.0-OS--Grade-blue?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
+[![version](https://img.shields.io/badge/v1.1.0-Hardcore--Edition-red?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/yuancafe/LLM-Wiki-OS?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/stargazers)
 
 </div>
 
 ---
 
-## 🌟 概览：为什么选择 LLM Wiki OS？
+## 🚀 v1.1.0 有什么新东西？
 
-普通的 "LLM Wiki" 是静态的，它们只是 AI 堆放文字的文件夹。**LLM Wiki OS** 是一个自主调度器，它将您的 AI Agent 变成了一个**“数字园丁”**。它不仅存储信息，更是在您的思想生长过程中实现**自动溯源、深度链接和自我进化**。
+我们集成了社区中最顶尖的实现模式，让项目超越了简单的存储。**LLM Wiki OS 现在是一个“知识编译器”。**
 
-### 🏆 核心进化点
-- **3 层调度溯源架构**：按优先级从本地文件、结构化记忆（NotebookLM/iMA/飞书）和全球 Web 检索知识。
-- **🌱 自生长引擎**：全球首个能“建议”您下一步学什么并自动构建结构的 Wiki。
-- **企业级连接器**：无缝整合企业微信、钉钉、Google Docs、Slack 和 Discord。
+### 🧠 1. “反映式结晶”流水线 (Reflect & Grow)
+不再是盲目的文字堆砌。每次消化素材都包含一个**反思阶段 (Reflect Phase)**：
+- **冲突检测**：这篇新论文是否与我现有的 Wiki 结论矛盾？
+- **冗余过滤**：这个概念是否已经在其他地方被更好地解释了？
+- **增量合并**：直接更新现有知识，而不是创建重复文件。
+
+### ⚡ 2. SQLite 语义索引
+引入 **`wiki.db`**。我们使用本地 SQLite 索引来追踪整个库的状态。
+- **极速扫描**：在毫秒内扫描 10,000+ 笔记，为自生长引擎提供动力。
+- **数据完整性**：确保没有断链或孤立实体。
+
+### 🔍 3. 人机协作审计 (Audit Block)
+每个 AI 生成的条目现在都包含原生的**审计块**：
+- **置信度评分**：基于来源可靠性的 0-100% 评分。
+- **核实逻辑**：标记条目为“人工已核实”，防止 AI 幻觉漂移。
+
+---
+
+## 🛠️ 硬核架构
+
+### **3 层调度溯源**
+- **第一层**：本地物理原始文件 (Physical Raw)。
+- **第二层**：结构化中继记忆 (NotebookLM, iMA, 飞书, Slack, Discord)。
+- **第三层**：实时网页抓取 (OpenCLI 140+ 网站)。
+
+### **🌱 自主生长**
+运行 `sync_growth()`，让操作系统分析您的思想轨迹，并建议知识库的下一个前沿。
+
+---
+
+## 🚀 安装
+
+```bash
+# 1. 克隆与设置
+git clone https://github.com/yuancafe/LLM-Wiki-OS.git ~/.agents/skills/llm-wiki-os
+
+# 2. 重新索引现有库
+python3 scripts/reindex-db.py "~/Documents/MyVault/LLM-Wiki"
+```
+
+---
+
+## 📜 致谢与致敬
+
+本版本深受以下项目启发：
+- **[Andrej Karpathy](https://karpathy.ai/)**：原创方法论。
+- **[Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki)**：贡献了“反映式”逻辑与 SQLite 索引模式。
+- **[sdyckjq-lab](https://github.com/sdyckjq-lab/llm-wiki-skill)**：贡献了 Agent Skill 的核心架构。
 
 ---
 

@@ -4,7 +4,16 @@
 
 All notable changes to this project will be documented in this file. This project follows the evolution from a simple CLI skill to a comprehensive Knowledge OS.
 
+## [1.1.0] - 2026-05-09 (The Hardcore Edition)
+
+### Added
+- **"Reflect & Grow" Logic**: Integrated Astro-Han's reflection pattern. AI now detects conflicts and redundancies before crystallization.
+- **SQLite Semantic Indexing**: New `scripts/reindex-db.py` to maintain a local `wiki.db` for lightning-fast vault analysis.
+- **Audit Blocks**: Built-in human-in-the-loop verification blocks for every generated wiki entry.
+- **Minimalist Prompt Refactor**: Compressed agent instructions to maximize context efficiency (inspired by Karpathy's gist style).
+
 ## [1.0.0] - 2026-05-09 (The "OS" Rebirth)
+...
 
 ### Added
 - **Major Rebranding**: Project evolved from `llm-wiki-skill` to **LLM Wiki OS**, emphasizing orchestration over simple storage.
