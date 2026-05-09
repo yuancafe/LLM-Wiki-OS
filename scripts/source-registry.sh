@@ -17,7 +17,8 @@ usage() {
   bash scripts/source-registry.sh match-url <url>
   bash scripts/source-registry.sh match-file <path>
   bash scripts/source-registry.sh list-by-category <core_builtin|optional_adapter|manual_only>
-  bash scripts/source-registry.sh unique-dependencies <bundled|install_time|none>
+  bash scripts/source-registry.sh unique-dependencies <bundled|install_time|mcp_native|none>
+  bash scripts/source-registry.sh refresh-opencli
   bash scripts/source-registry.sh validate
 EOF
 }
@@ -89,6 +90,8 @@ validate_registry() {
 
   awk -F '\t' '
     NR == 1 { next }
+    /^#/ { next }
+    /^[[:space:]]*$/ { next }
     {
       if ($1 == "" || $2 == "" || $3 == "" || $4 == "" || $5 == "" || $6 == "" || $10 == "") {
         printf("source-registry.tsv 第 %d 行存在空字段\n", NR) > "/dev/stderr"
@@ -232,12 +235,14 @@ match_url() {
   local host row source_id source_label source_category input_mode match_rule raw_dir adapter_name dependency_name dependency_type fallback_hint
   local fallback_row=""
   local pattern pattern_list
+  local opencli_registry="$SCRIPT_DIR/opencli-registry.json"
 
   validate_registry
   host="$(extract_url_host "$url")"
 
   while IFS=$'\t' read -r source_id source_label source_category input_mode match_rule raw_dir adapter_name dependency_name dependency_type fallback_hint; do
     [ "$source_id" = "source_id" ] && continue
+    [[ "$source_id" == \#* ]] && continue
     [ "$input_mode" = "url" ] || continue
 
     pattern_list="${match_rule#url_host:}"
@@ -254,6 +259,25 @@ match_url() {
     done
   done < "$REGISTRY_FILE"
 
+  # 2. 如果静态表没中，动态查询 OpenCLI 注册表
+  if [ -f "$opencli_registry" ] && command -v jq >/dev/null 2>&1; then
+    local o_match
+    o_match=$(jq -r --arg host "$host" '
+      .[] | select(.domain == $host or .domain == ("www." + $host) or .domain == ($host | sub("^www\\."; "")))
+      | [.site, .command]
+      | limit(1; .)
+      | @tsv
+    ' "$opencli_registry" 2>/dev/null)
+
+    if [ -n "$o_match" ]; then
+      local o_site o_cmd
+      read -r o_site o_cmd <<< "$o_match"
+      printf 'opencli_%s\t%s (OpenCLI)\toptional_adapter\turl\turl_host:%s\traw/articles\topencli:%s\topencli\tinstall_time\t尝试使用 opencli %s 命令提取内容\n' \
+        "$o_site" "$o_site" "$host" "$o_site" "$o_cmd"
+      return 0
+    fi
+  fi
+
   [ -n "$fallback_row" ] || return 1
   printf '%s\n' "$fallback_row"
 }
@@ -268,6 +292,7 @@ match_file() {
 
   while IFS=$'\t' read -r source_id source_label source_category input_mode match_rule raw_dir adapter_name dependency_name dependency_type fallback_hint; do
     [ "$source_id" = "source_id" ] && continue
+    [[ "$source_id" == \#* ]] && continue
     [ "$input_mode" = "file" ] || continue
 
     extension_list="${match_rule#file_ext:}"
@@ -306,6 +331,17 @@ list_unique_dependencies() {
   ' "$REGISTRY_FILE" | sort -u
 }
 
+refresh_opencli() {
+  if ! command -v opencli >/dev/null 2>&1; then
+    echo "未发现 opencli 命令，请先安装：npm install -g @jackwener/opencli" >&2
+    exit 1
+  fi
+
+  echo "正在同步 OpenCLI 适配器列表..."
+  opencli list -f json > "$SCRIPT_DIR/opencli-registry.json"
+  echo "[完成] 已同步 $(jq 'length' "$SCRIPT_DIR/opencli-registry.json") 个适配器"
+}
+
 command_name="${1:-}"
 
 case "$command_name" in
@@ -336,6 +372,10 @@ case "$command_name" in
   unique-dependencies)
     [ "$#" -eq 2 ] || { usage; exit 1; }
     list_unique_dependencies "$2"
+    ;;
+  refresh-opencli)
+    [ "$#" -eq 1 ] || { usage; exit 1; }
+    refresh_opencli
     ;;
   validate)
     [ "$#" -eq 1 ] || { usage; exit 1; }

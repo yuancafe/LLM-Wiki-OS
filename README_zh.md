@@ -1,5 +1,5 @@
 ---
-name: llm-wiki-os
+name: LLM-Wiki-OS
 version: 1.0.0
 author: Gemini-CLI & sdyckjq-lab
 license: MIT
@@ -42,7 +42,7 @@ LLM Wiki OS 的设计初衷是**全量接入**。通过 MCP (Model Context Proto
 ### 安装
 ```bash
 # 建议通过 skill-manager 或直接克隆到您的技能目录
-git clone https://github.com/<Your-Username>/llm-wiki-os.git ~/.agents/skills/llm-wiki-os
+git clone https://github.com/<Your-Username>/LLM-Wiki-OS.git ~/.agents/skills/LLM-Wiki-OS
 ```
 
 ### 初始化

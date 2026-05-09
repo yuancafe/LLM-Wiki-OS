@@ -1,5 +1,5 @@
 ---
-name: llm-wiki-os
+name: LLM-Wiki-OS
 version: 1.0.0
 ---
 
@@ -37,7 +37,7 @@ Designed for universal accessibility, LLM Wiki OS leverages MCP (Model Context P
 ### Installation
 ```bash
 # Recommended installation via skill-manager or direct clone to your skills directory
-git clone https://github.com/<Your-Username>/llm-wiki-os.git ~/.agents/skills/llm-wiki-os
+git clone https://github.com/<Your-Username>/LLM-Wiki-OS.git ~/.agents/skills/LLM-Wiki-OS
 ```
 
 ### Initialization
