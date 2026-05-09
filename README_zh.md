@@ -1,4 +1,4 @@
-# LLM Wiki OS v1.1.0: 硬核知识引擎
+# LLM Wiki OS v1.1.0: 自进化的知识引擎与操作系统
 
 [简体中文] | [English](./README.md)
 
@@ -6,7 +6,7 @@
 
 基于 [Andrej Karpathy](https://karpathy.ai/) & [Astro-Han](https://github.com/Astro-Han/karpathy-llm-wiki) 的进化版方法论
 
-**全球首个具备“反映式增长”逻辑的知识操作系统**
+**全球首个具备“自我生长”与“多源调度”能力的知识操作系统**
 
 [![version](https://img.shields.io/badge/v1.1.0-Hardcore--Edition-red?style=flat-square&labelColor=24292e)](https://github.com/yuancafe/LLM-Wiki-OS/releases)
 [![license](https://img.shields.io/badge/MIT-license-5a6e5c?style=flat-square&labelColor=24292e)](LICENSE)
